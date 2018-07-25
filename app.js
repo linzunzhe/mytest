@@ -76,8 +76,8 @@ app.post('/messages', function (request, response) {
                 });*/
                 /*SendMessage(acct, 'line://app/{1592804495-p35qKYNB}', 'tstiisacompanyfortatung', reply_token, function (ret) {
                 });*/
-                ////SendFlexMessage(acct, results[idx].message.text, 'tstiisacompanyfortatung', reply_token, function (ret) {});
-                SendltMessage(acct, results[idx].message.text, 'tstiisacompanyfortatung', reply_token, function (ret) {});
+                SendFlexMessage(acct, results[idx].message.text, 'tstiisacompanyfortatung', reply_token, function (ret) { });
+                //SendltMessage(acct, results[idx].message.text, 'tstiisacompanyfortatung', reply_token, function (ret) {});
                 //SenduseridMessage(acct, results[idx].message.text, 'tstiisacompanyfortatung', reply_token, function (ret) { });
                 //distance();
                 //distHaversine();
@@ -102,30 +102,30 @@ process.on('uncaughtException', function (err) {
 
 /*********************************************************888 */
 function distHaversine() {
-    var p1 = {lat: 25.064258, lng: 121.522554};
-    var p2 = {lat: 25.059610, lng: 121.513416};
+    var p1 = { lat: 25.064258, lng: 121.522554 };
+    var p2 = { lat: 25.059610, lng: 121.513416 };
     var rad = function (x) { return x * Math.PI / 180; }
     var R = 6378.137; // earth's mean radius in km
     var dLat = rad(p2.lat - p1.lat);
     var dLong = rad(p2.lng - p1.lng);
 
     var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-            Math.cos(rad(p1.lat)) * Math.cos(rad(p2.lat))
-            * Math.sin(dLong / 2) * Math.sin(dLong / 2);
+        Math.cos(rad(p1.lat)) * Math.cos(rad(p2.lat))
+        * Math.sin(dLong / 2) * Math.sin(dLong / 2);
     var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     var d = R * c;
     console.log("------------------------------------------------------------------------com" + d);
 }
 function distance() {
-    var o = {lat: 25.064258, lng: 121.522554};
-    var d = {lat: 25.059610, lng: 121.513416};
+    var o = { lat: 25.064258, lng: 121.522554 };
+    var d = { lat: 25.059610, lng: 121.513416 };
     var EARTH_RADIUS = 6378137.0;
-    var lat1 = o.lat*Math.PI/180.0;
-    var lat2 = d.lat*Math.PI/180.0;
+    var lat1 = o.lat * Math.PI / 180.0;
+    var lat2 = d.lat * Math.PI / 180.0;
     var a = lat1 - lat2;
-    var b = (o.lng - d.lng)*Math.PI/180.0;
-    var dis = 2*Math.asin(Math.sqrt(Math.pow(Math.sin(a/2),2) + Math.cos(lat1)*Math.cos(lat2)*Math.pow(Math.sin(b/2),2)))*EARTH_RADIUS;
-    dis = Math.round(dis*10000)/10000;
+    var b = (o.lng - d.lng) * Math.PI / 180.0;
+    var dis = 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(a / 2), 2) + Math.cos(lat1) * Math.cos(lat2) * Math.pow(Math.sin(b / 2), 2))) * EARTH_RADIUS;
+    dis = Math.round(dis * 10000) / 10000;
     console.log("------------------------------------------------------------------------my" + dis);
 }
 /**********************************************************/
@@ -200,13 +200,48 @@ function SendltMessage(userId, message, password, reply_token, callback) {
 // 傳送訊息給 LINE 使用者
 function SendFlexMessage(userId, message, password, reply_token, callback) {
     if (password == 'tstiisacompanyfortatung') {
-        var data = {
-            'to': userId,
-            'messages': [
-                {
-                    "type": "flex",
-                    "altText": "this is a flex message",
-                    "contents": carous/*{
+        if (message == "圖片") {
+            var data = {
+                'to': userId,
+                'messages': [
+                    {
+                        littletest
+                    }
+                ]
+            };
+        }
+        else {
+            var data = {
+                'to': userId,
+                'messages': [
+                    {
+                        "type": "flex",
+                        "altText": "this is a flex message",
+                        "contents": carous
+                    }
+                ]
+            };
+        }
+
+        logger.info('傳送訊息給 ' + userId);
+        /*ReplyMessage(data, config.channel_access_token, reply_token, function (ret) {
+            if (!ret) {
+                PostToLINE(data, config.channel_access_token, this.callback);
+            } 
+        });*/
+        ReplyMessage(data, config.channel_access_token, reply_token, function (ret) {
+            if (ret) {
+                this.callback(true);
+            } else {
+                PostToLINE(data, config.channel_access_token, this.callback);
+            }
+        }.bind({ callback: callback }));
+    } else {
+        callback(false);
+    }
+}
+
+/*{
                         "type": "bubble",
                         "hero": {
                             "type": "image",
@@ -335,26 +370,8 @@ function SendFlexMessage(userId, message, password, reply_token, callback) {
                             ]
                         }
                     }*/ //contents end
-                }
-            ]
-        };
-        logger.info('傳送訊息給 ' + userId);
-        /*ReplyMessage(data, config.channel_access_token, reply_token, function (ret) {
-            if (!ret) {
-                PostToLINE(data, config.channel_access_token, this.callback);
-            } 
-        });*/
-        ReplyMessage(data, config.channel_access_token, reply_token, function (ret) {
-            if (ret) {
-                this.callback(true);
-            } else {
-                PostToLINE(data, config.channel_access_token, this.callback);
-            }
-        }.bind({ callback: callback }));
-    } else {
-        callback(false);
-    }
-}
+
+
 
 // 傳送訊息給 LINE 使用者
 function SendMessage(userId, message, password, reply_token, callback) {
