@@ -3,8 +3,8 @@
     "baseUrl": "https://i.imgur.com/RMiDTWF.png?",
     "altText": "圖片加載失敗",
     "baseSize": {
-        "height": 300,
-        "width": 300
+        "height": 240,
+        "width": 240
     },
     "actions": [
         {
