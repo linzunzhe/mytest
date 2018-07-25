@@ -1,9 +1,5 @@
 {
-    "channel_access_token": "k2XW1JvzlJ/XME9zR/THqAVFweCxMO4svgq/OxzH9y6IeJ2CuM+jCc0eocwKzOnv2Mb1q3VsA9BS2UOe/xTC8eG8Q9j1vFr/0K5ukN+7Zl++tXDqQ3oPoOX4ZZrdn+OPWe83yXkm+NjvNshmZTIqWAdB04t89/1O/w1cDnyilFU=",
-    "channel_id": "1593612875",
-    "channel_secret": "cf816cd6467ac85f20966a3eea05d69c",
-    "login_channel_id": "1594485766",
-    "login_channel_secret": "2cfc998ea122461f8a4bf9c174742956",
-    "login_redirect_uri": "http://172.31.7.163:7433",
-    "rich_menu_id":"richmenu-d1ad5e379281d29fbe33cb0224a8321d"
+    "channel_access_token": "C5dX6oGflXPp5TFSQ+Xataw3+a4P++VCSZvToluIjRSx1YznhKGgVlZpJVVz6boKQay3VcQY/fLFSVPtU6mv5k1DGHJWdfz0JzYHpPFLSMHGmU9x6jQww15BKjNQCsK2V13oiFGRzZdtU5AC28SL/QdB04t89/1O/w1cDnyilFU=",
+    "channel_id": "1593046997",
+    "channel_secret": "22a460e3b79351cc0a8d9cebbdc1cbfb"
 }
