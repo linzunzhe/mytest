@@ -76,7 +76,7 @@ app.post('/messages', function (request, response) {
                 });*/
                 /*SendMessage(acct, 'line://app/{1592804495-p35qKYNB}', 'tstiisacompanyfortatung', reply_token, function (ret) {
                 });*/
-                SendFlexMessage(acct, results[idx].message.text, 'tstiisacompanyfortatung', reply_token, function (ret) {});
+                ////SendFlexMessage(acct, results[idx].message.text, 'tstiisacompanyfortatung', reply_token, function (ret) {});
                 SendltMessage(acct, results[idx].message.text, 'tstiisacompanyfortatung', reply_token, function (ret) {});
                 //SenduseridMessage(acct, results[idx].message.text, 'tstiisacompanyfortatung', reply_token, function (ret) { });
                 //distance();
