@@ -1,10 +1,10 @@
 {
     "type": "imagemap",
-    "baseUrl": "https://i.imgur.com/ag1BcOK.png?",
+    "baseUrl": "https://i.imgur.com/RMiDTWF.png?",
     "altText": "圖片加載失敗",
     "baseSize": {
-        "height": 1040,
-        "width": 1040
+        "height": 240,
+        "width": 240
     },
     "actions": [
         {
@@ -14,18 +14,18 @@
             "area": {
                 "x": 0,
                 "y": 0,
-                "width": 520,
-                "height": 1040
+                "width": 120,
+                "height": 240
             }
         },
         {
             "type": "message",
             "text": "測試測試",
             "area": {
-                "x": 520,
+                "x": 120,
                 "y": 0,
-                "width": 520,
-                "height": 1040
+                "width": 120,
+                "height": 240
             }
         }
     ]
