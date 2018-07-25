@@ -75,7 +75,7 @@ app.post('/messages', function (request, response) {
                 });*/
                 SendFlexMessage(acct, results[idx].message.text, 'tstiisacompanyfortatung', reply_token, function (ret) {
                 });
-                SenduseridMessage(acct, results[idx].message.text, 'tstiisacompanyfortatung', reply_token, function (ret) { });
+                //SenduseridMessage(acct, results[idx].message.text, 'tstiisacompanyfortatung', reply_token, function (ret) { });
                 //distance();
                 //distHaversine();
             }
@@ -167,7 +167,6 @@ function SenduseridMessage(userId, message, password, reply_token, callback) {
         callback(false);
     }
 }
-
 
 // 傳送訊息給 LINE 使用者
 function SendFlexMessage(userId, message, password, reply_token, callback) {
