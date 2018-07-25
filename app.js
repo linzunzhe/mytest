@@ -28,6 +28,9 @@ app.all('*', function (req, res, next) {
 var config = require('fs').readFileSync(__dirname + '/config.json');
 config = JSON.parse(config); //字串轉物件
 
+var carous = require('fs').readFileSync(__dirname + '/carousel.json');
+carous = JSON.parse(carous); //字串轉物件
+
 app.get('/api', function (request, response) {
     response.send('API is running');
 });
@@ -70,11 +73,11 @@ app.post('/messages', function (request, response) {
                 });*/
                 /*SendMessage(acct, 'line://app/{1592804495-p35qKYNB}', 'tstiisacompanyfortatung', reply_token, function (ret) {
                 });*/
-                //SendFlexMessage(acct, results[idx].message.text, 'tstiisacompanyfortatung', reply_token, function (ret) {
-                //});
+                SendFlexMessage(acct, results[idx].message.text, 'tstiisacompanyfortatung', reply_token, function (ret) {
+                });
                 SenduseridMessage(acct, results[idx].message.text, 'tstiisacompanyfortatung', reply_token, function (ret) { });
-                distance();
-                distHaversine();
+                //distance();
+                //distHaversine();
             }
         }
     }
@@ -171,7 +174,7 @@ function SendFlexMessage(userId, message, password, reply_token, callback) {
     if (password == 'tstiisacompanyfortatung') {
         var data = {
             'to': userId,
-            'messages': [
+            'messages': carous/*[
                 {
                     "type": "flex",
                     "altText": "this is a flex message",
@@ -305,7 +308,7 @@ function SendFlexMessage(userId, message, password, reply_token, callback) {
                         }
                     } //contents end
                 }
-            ]
+            ]*/
         };
         logger.info('傳送訊息給 ' + userId);
         /*ReplyMessage(data, config.channel_access_token, reply_token, function (ret) {
