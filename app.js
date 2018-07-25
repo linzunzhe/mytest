@@ -204,13 +204,11 @@ function SendFlexMessage(userId, message, password, reply_token, callback) {
             var data = {
                 'to': userId,
                 'messages': [
-                    {
-                        littletest
-                    }
+                    littletest
                 ]
             };
         }
-        else {
+        else if(message != "測試測試"){
             var data = {
                 'to': userId,
                 'messages': [
