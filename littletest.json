@@ -3,8 +3,8 @@
     "baseUrl": "https://i.imgur.com/ag1BcOK.png?",
     "altText": "圖片加載失敗",
     "baseSize": {
-        "height": 700,
-        "width": 700
+        "height": 1040,
+        "width": 1040
     },
     "actions": [
         {
@@ -14,18 +14,18 @@
             "area": {
                 "x": 0,
                 "y": 0,
-                "width": 350,
-                "height": 700
+                "width": 520,
+                "height": 1040
             }
         },
         {
             "type": "message",
             "text": "測試測試",
             "area": {
-                "x": 350,
+                "x": 520,
                 "y": 0,
-                "width": 350,
-                "height": 700
+                "width": 520,
+                "height": 1040
             }
         }
     ]
