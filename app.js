@@ -177,7 +177,7 @@ function SendFlexMessage(userId, message, password, reply_token, callback) {
                 {
                     "type": "flex",
                     "altText": "this is a flex message",
-                    "contents": carous.flex/*{
+                    "contents": carous/*{
                         "type": "bubble",
                         "hero": {
                             "type": "image",
