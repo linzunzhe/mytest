@@ -1,10 +1,10 @@
 {
     "type": "imagemap",
-    "baseUrl": "https://member.tatung.com/Content/event/airconditioner_aci/img_2/bn-bg.jpg#",
+    "baseUrl": "https://imgur.com/1wbPgwm#",
     "altText": "圖片加載失敗",
     "baseSize": {
-        "height": 1920,
-        "width": 1000
+        "height": 1040,
+        "width": 700
     },
     "actions": [
         {
@@ -14,18 +14,18 @@
             "area": {
                 "x": 0,
                 "y": 0,
-                "width": 960,
-                "height": 1000
+                "width": 520,
+                "height": 700
             }
         },
         {
             "type": "message",
             "text": "測試測試",
             "area": {
-                "x": 960,
+                "x": 520,
                 "y": 0,
-                "width": 960,
-                "height": 1000
+                "width": 520,
+                "height": 700
             }
         }
     ]
