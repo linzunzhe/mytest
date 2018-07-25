@@ -173,11 +173,11 @@ function SendFlexMessage(userId, message, password, reply_token, callback) {
     if (password == 'tstiisacompanyfortatung') {
         var data = {
             'to': userId,
-            'messages': carous.flex/*[
+            'messages': [
                 {
                     "type": "flex",
                     "altText": "this is a flex message",
-                    "contents": {
+                    "contents": carous.flex/*{
                         "type": "bubble",
                         "hero": {
                             "type": "image",
@@ -305,9 +305,9 @@ function SendFlexMessage(userId, message, password, reply_token, callback) {
                                 }
                             ]
                         }
-                    } //contents end
+                    }*/ //contents end
                 }
-            ]*/
+            ]
         };
         logger.info('傳送訊息給 ' + userId);
         /*ReplyMessage(data, config.channel_access_token, reply_token, function (ret) {
