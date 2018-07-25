@@ -1,0 +1,33 @@
+{
+    "type": "imagemap",
+    "baseUrl": "https://imgur.com/MtyJ6NK",
+    "altText": "圖片加載失敗",
+    "baseSize": {
+        "height": 400,
+        "width": 800
+    },
+    "actions": [
+        {
+            "type": "uri",
+            "linkUri": "https://google.com",
+            "label": "https://google.com",
+            "area": {
+                "x": 0,
+                "y": 0,
+                "width": 400,
+                "height": 400
+            }
+        },
+        {
+            "type": "message",
+            "text": "測試測試",
+            "area": {
+                "x": 400,
+                "y": 0,
+                "width": 400,
+                "height": 400
+            }
+        }
+    ]
+
+}
