@@ -1,9 +1,9 @@
 {
     "type": "imagemap",
-    "baseUrl": "https://imgur.com/1wbPgwm#",
+    "baseUrl": "https://imgur.com/2YA1WAO#",
     "altText": "圖片加載失敗",
     "baseSize": {
-        "height": 1040,
+        "height": 700,
         "width": 700
     },
     "actions": [
@@ -14,7 +14,7 @@
             "area": {
                 "x": 0,
                 "y": 0,
-                "width": 520,
+                "width": 350,
                 "height": 700
             }
         },
@@ -22,9 +22,9 @@
             "type": "message",
             "text": "測試測試",
             "area": {
-                "x": 520,
+                "x": 350,
                 "y": 0,
-                "width": 520,
+                "width": 350,
                 "height": 700
             }
         }
