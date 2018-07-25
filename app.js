@@ -173,7 +173,7 @@ function SendFlexMessage(userId, message, password, reply_token, callback) {
     if (password == 'tstiisacompanyfortatung') {
         var data = {
             'to': userId,
-            'messages': carous/*[
+            'messages': carous.flex/*[
                 {
                     "type": "flex",
                     "altText": "this is a flex message",
