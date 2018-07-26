@@ -157,7 +157,7 @@ function SendGiftMessage(user, password) {
     if (password == 'tstiisacompanyfortatung') {
         var name = "恭喜 " + JSON.stringify(user.displayName);
         var data = {
-            'to': userId,
+            'to': JSON.stringify(user.userId),
             'messages': [{
                 "type": "flex",
                 "altText": "e同購會員綁定",
@@ -209,7 +209,7 @@ function SendGiftMessage(user, password) {
                                 "contents": [
                                     {
                                         "type": "image",
-                                        "url": pic,
+                                        "url": JSON.stringify(user.pictureUrl),
                                         "aspectMode": "cover",
                                         "aspectRatio": "4:3",
                                         "size": "sm",
