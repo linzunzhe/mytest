@@ -151,6 +151,8 @@ function SendGiftMessage(user, password) {
     console.log(user.userId);
     console.log(user.displayName);
     console.log(user.pictureUrl);
+    console.log(typeof(user));
+    //var userId = user.userId;
     if (password == 'tstiisacompanyfortatung') {
         var name = "恭喜 " + user.displayName;
         var data = {
