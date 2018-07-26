@@ -42,7 +42,7 @@ app.get('/lifftest', function (request, response) {
     console.log('GET /lifftest');
     request.header("Content-Type", 'text/html');
     var fs = require('fs');
-    fs.readFile(__dirname + '/lifftest.html', 'utf8', function (err, data) {
+    fs.readFile(__dirname + '/mytest.html', 'utf8', function (err, data) {
         if (err) {
             res.send(err);
         }
@@ -54,6 +54,13 @@ app.get('/logs', function (request, response) {
     var stream = require('fs').createReadStream('logs/messaging.log');
     stream.pipe(response);
 });
+
+app.post('/getlineuserid', function (request, response) {
+    console.log('post /getlineuserid');
+    response.send('200');
+    SendFlexMessage(acct, results[idx].message.text, 'tstiisacompanyfortatung', reply_token, function (ret) { });
+});
+
 
 app.post('/messages', function (request, response) {
     response.send('');
@@ -133,7 +140,7 @@ function distance() {
 //1593046997-AoeqdVRD 100%
 //1593046997-1dNyPqzG 50%
 //1593046997-3zOeargL 80%
-//onload="num_turn()"
+//
 function SenduseridMessage(userId, message, password, reply_token, callback) {
     if (password == 'tstiisacompanyfortatung') {
         let data = {

@@ -5,17 +5,18 @@
     <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
     <style>
-        body{
+        body {
             background-size: cover;
-            width:960px;
-            height:820px;
+            width: 960px;
+            height: 820px;
         }
     </style>
 </head>
 
-<body  background="https://member.tatung.com/Content/event/airconditioner_aci/img_2/bn-bg.jpg" >
+<body background="https://member.tatung.com/Content/event/airconditioner_aci/img_2/bn-bg.jpg" onload="num_turn()">
     <div style="width:100%;height:100%;">
-        <input type="button" onclick="javascript:location.href='http://tcpc.tatung.com/'" style="background-color: transparent;background-image:url(https://member.tatung.com/Content/event/airconditioner_aci/img/round_s_01.png);width: 960px;height: 100%;background-size: cover;border:none;" id="imgg">
+        <input type="button" onclick="getBubble()" style="background-color: transparent;background-image:url(https://member.tatung.com/Content/event/airconditioner_aci/img/round_s_01.png);width: 960px;height: 100%;background-size: cover;border:none;"
+            id="imgg">
     </div>
     </button>
     <script>
@@ -45,7 +46,141 @@
             }
             setTimeout(num_turn, 50);
         }
-        num_turn();
+
+        function getBubble() {
+            /*liff.init(function (){
+                $.post('/getlineuserid');
+            }, function (err){console.log("error: " + err);})*/
+            liff.sendMessage({
+                "type": "bubble",
+                "hero": {
+                    "type": "image",
+                    "url": "https://www.etungo.com.tw/files/TC_PSpec/PS_Pic/TAW-A150Ls.jpg",
+                    "size": "full",
+                    "aspectRatio": "20:13",
+                    "aspectMode": "cover",
+                    "action": {
+                        "type": "uri",
+                        "uri": "https://www.etungo.com.tw/inside/377/722/728/60127.html"
+                    }
+                },
+                "body": { //body位置
+                    "type": "box",
+                    "layout": "vertical",
+                    "spacing": "md",
+                    "action": {
+                        "type": "uri",
+                        "uri": "https://www.etungo.com.tw/inside/377/722/728/60127.html"
+                    },
+                    "contents": [
+                        {
+                            "type": "text",
+                            "text": "TATUNG大同 15KG定頻洗衣機 (TAW-A150L)",
+                            "size": "xl",
+                            "weight": "bold",
+                            "action": {
+                                "type": "uri",
+                                "uri": "https://www.etungo.com.tw/inside/377/722/728/60127.html"
+                            }
+                        },
+                        {
+                            "type": "box",
+                            "layout": "vertical",
+                            "spacing": "sm",
+                            "contents": [
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "促銷商品",
+                                            "weight": "bold",
+                                            "margin": "sm",
+                                            "flex": 0,
+                                            "action": {
+                                                "type": "uri",
+                                                "uri": "https://www.etungo.com.tw/inside/377/722/728/60127.html"
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "2018/6/29~2018/7/11",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa",
+                                            "action": {
+                                                "type": "uri",
+                                                "uri": "https://www.etungo.com.tw/inside/377/722/728/60127.html"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "促銷價",
+                                            "weight": "bold",
+                                            "margin": "sm",
+                                            "flex": 0,
+                                            "action": {
+                                                "type": "uri",
+                                                "uri": "https://www.etungo.com.tw/inside/377/722/728/60127.html"
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "15,490元",
+                                            "size": "sm",
+                                            "align": "end",
+                                            "color": "#aaaaaa",
+                                            "action": {
+                                                "type": "uri",
+                                                "uri": "https://www.etungo.com.tw/inside/377/722/728/60127.html"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "text": "．全自動NEURO & FUZZLY智慧型控制。 ．6種洗衣行程(標準、強洗、快洗、柔洗、毛毯、浸泡)。 ．五道立體噴射水流，洗淨力超強。 ．Air Bubble洗淨新概念。 ．噴淋式洗清，節水又清淨。 ．強化玻璃透明上蓋。 ．自動偵測洗衣無段式水位:手動六段。 ．不鏽鋼洗衣槽。 ．槽洗淨功能，防霉除菌一次搞定。 ．上蓋透明視窗，洗衣動作一目瞭然。 ．兒童安全鎖。",
+                            "wrap": true,
+                            "color": "#aaaaaa",
+                            "size": "xxs",
+                            "action": {
+                                "type": "uri",
+                                "uri": "https://www.google.com.tw"
+                            }
+                        }
+                    ]
+                },
+                "footer": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                        {
+                            "type": "spacer",
+                            "size": "xxl"
+                        },
+                        {
+                            "type": "button",
+                            "style": "primary",
+                            "color": "#905c44",
+                            "action": {
+                                "type": "uri",
+                                "label": "登入e同購",
+                                "uri": "https://www.etungo.com.tw/login.html"
+                            }
+                        }
+                    ]
+                }
+            }).catch(console.log("err"));
+        }
     </script>
 </body>
 
