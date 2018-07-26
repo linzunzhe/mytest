@@ -166,18 +166,22 @@
                         }
                     }
                 }]
-                ).then(() => { console.log("message sent"); }).catch((err) => { console.log("error: " + err); });
-                liff.closeWindow();
-            }, function (err) { console.log("error: " + err); })*/
-            liff.getProfile().then(function (profile) {
-                window.alert('userId: '+JSON.stringify(profile));
-                var userId = JSON.stringify(profile.userId);
-                var data={
-                    userId : userId
-                }
-                $.post('/getlineuserid', data, function(){
-                    
+                ).then(() => { console.log("message sent"); }).catch((err) => { console.log("error: " + err); });*/
+                liff.getProfile().then(function (profile) {
+                    window.alert('userId: ' + JSON.stringify(profile));
+                    var userId = JSON.stringify(profile.userId);
+                    var data = {
+                        userId: userId
+                    }
+                    $.post('/getlineuserid', data, function () {
+
+                    });
+                }).catch(function (error) {
+                    window.alert("Error getting profile: " + error);
                 });
+                liff.closeWindow();
+            }, function (err) { console.log("error: " + err); })
+
         }
     </script>
 </body>
