@@ -264,6 +264,7 @@ function SendGiftMessage(user, password) {
         }
         var https = require('https');
         var req = https.request(options, function (res) {
+            console.log('statusCode:', res.statusCode);
             res.setEncoding('utf8');
             res.on('data', function (chunk) {
                 logger.info('Response: ' + chunk);
