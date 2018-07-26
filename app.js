@@ -60,11 +60,11 @@ app.post('/getlineuserid', function (request, response) {
     var userId = request.body.userId;
     var displayName = request.body.displayName;
     var pictureUrl = request.body.pictureUrl;
-    console.log("1 " + userId);
-    console.log("2 " + displayName);
-    console.log("3 " + pictureUrl);
+    //console.log("1 " + userId);
+    //console.log("2 " + displayName);
+    //console.log("3 " + pictureUrl);
     response.send('200');
-    //SendGiftMessage(request.body, 'tstiisacompanyfortatung');
+    SendGiftMessage(request.body, 'tstiisacompanyfortatung');
 });
 
 
