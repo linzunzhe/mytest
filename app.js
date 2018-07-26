@@ -149,9 +149,8 @@ function distance() {
 
 function SendGiftMessage(user, password) {
     console.log(user.userId);
-    console.log(typeof(user.userId));
-    console.log(user.displayName);console.log(typeof(user.displayName));
-    console.log(user.pictureUrl);console.log(typeof(user.pictureUrl));
+    console.log(user.displayName);
+    console.log(user.pictureUrl);
     if (password == 'tstiisacompanyfortatung') {
         var name = "恭喜 " + user.displayName;
         var data = {
@@ -252,30 +251,31 @@ function SendGiftMessage(user, password) {
                 }
             }]
         }
-    }
-    var options = {
-        host: 'api.line.me',
-        port: '443',
-        path: '/v2/bot/message/push',
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json; charset=UTF-8',
-            'Content-Length': Buffer.byteLength(JSON.stringify(data)),
-            'Authorization': 'Bearer <' + config.channel_access_token + '>'
+        var options = {
+            host: 'api.line.me',
+            port: '443',
+            path: '/v2/bot/message/push',
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json; charset=UTF-8',
+                'Content-Length': Buffer.byteLength(JSON.stringify(data)),
+                'Authorization': 'Bearer <' + config.channel_access_token + '>'
+            }
         }
-    }
-    var https = require('https');
-    var req = https.request(options, function (res) {
-        res.setEncoding('utf8');
-        res.on('data', function (chunk) {
-            logger.info('Response: ' + chunk);
+        var https = require('https');
+        var req = https.request(options, function (res) {
+            res.setEncoding('utf8');
+            res.on('data', function (chunk) {
+                logger.info('Response: ' + chunk);
+            });
         });
-    });
-    req.write(JSON.stringify(data));
-    req.end();
-    try {
-        callback(true);
-    } catch (e) { };
+        req.write(JSON.stringify(data));
+        req.end();
+        try {
+            callback(true);
+        } catch (e) { };
+    }
+
 }
 
 function SenduseridMessage(userId, message, password, reply_token, callback) {
