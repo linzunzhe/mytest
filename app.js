@@ -55,11 +55,11 @@ app.get('/logs', function (request, response) {
     stream.pipe(response);
 });
 
-app.post('/getlineuserid', function (request, response) {
+/*app.post('/getlineuserid', function (request, response) {
     console.log('post /getlineuserid');
     response.send('200');
     SendFlexMessage(acct, results[idx].message.text, 'tstiisacompanyfortatung', reply_token, function (ret) { });
-});
+});*/
 
 
 app.post('/messages', function (request, response) {
