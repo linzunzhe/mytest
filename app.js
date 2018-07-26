@@ -204,24 +204,12 @@ function SendGiftMessage(user, password) {
                                 "layout": "horizontal",
                                 "spacing": "md",
                                 "contents": [
-                                    {
-                                        "type": "image",
-                                        "url": user.pictureUrl,
-                                        "aspectMode": "cover",
-                                        "aspectRatio": "4:3",
-                                        "size": "sm",
-                                        "gravity": "bottom"
-                                    },
+                                    
                                     {
                                         "type": "box",
                                         "layout": "vertical",
                                         "contents": [
-                                            {
-                                                "type": "text",
-                                                "text": name,
-                                                "size": "sm",
-                                                "color": "#444444"
-                                            },
+                                            
                                             {
                                                 "type": "text",
                                                 "text": "抽到特獎",
