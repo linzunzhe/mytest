@@ -60,11 +60,11 @@ app.post('/getlineuserid', function (request, response) {
     var userId = request.body.userId;
     var displayName = request.body.displayName;
     var pictureUrl = request.body.pictureUrl;
-    console.log(userId);
-    console.log(displayName);
-    console.log(pictureUrl);
+    //console.log(userId);
+    //console.log(displayName);
+    //console.log(pictureUrl);
     response.send('200');
-    SendFlexMessage(acct, results[idx].message.text, 'tstiisacompanyfortatung', reply_token, function (ret) { });
+    SendGiftMessage(request.body, 'tstiisacompanyfortatung');
 });
 
 
@@ -146,7 +146,134 @@ function distance() {
 //1593046997-AoeqdVRD 100%
 //1593046997-1dNyPqzG 50%
 //1593046997-3zOeargL 80%
-//
+
+function SendGiftMessage(user, password) {
+    if (password == 'tstiisacompanyfortatung') {
+        var name = "恭喜 " + user.displayName;
+        var data = {
+            'to': user.userId,
+            'messages': [{
+                "type": "flex",
+                "altText": "e同購會員綁定",
+                "contents": {
+                    "type": "bubble",
+                    "header": {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "特獎",
+                                "weight": "bold",
+                                "color": "#444444",
+                                "size": "xl"
+                            }
+                        ]
+                    },
+                    "hero": {
+                        "type": "image",
+                        "url": "https://www.etungo.com.tw/files/TC_PSpec/PS_Pic/TAW-A150Ls.jpg",
+                        "size": "full",
+                        "aspectRatio": "20:13",
+                        "aspectMode": "cover",
+                        "action": {
+                            "type": "uri",
+                            "uri": "https://www.etungo.com.tw/inside/377/722/728/60127.html"
+                        }
+                    },
+                    "body": {
+                        "type": "box",
+                        "layout": "vertical",
+                        "spacing": "md",
+                        "action": {
+                            "type": "uri",
+                            "uri": "https://linecorp.com"
+                        },
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "TATUNG大同 15KG定頻洗衣機 (TAW-A150L)",
+                                "size": "xl",
+                                "weight": "bold"
+                            },
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "spacing": "md",
+                                "contents": [
+                                    {
+                                        "type": "image",
+                                        "url": user.pictureUrl,
+                                        "aspectMode": "cover",
+                                        "aspectRatio": "4:3",
+                                        "size": "sm",
+                                        "gravity": "bottom"
+                                    },
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": name,
+                                                "size": "sm",
+                                                "color": "#444444"
+                                            },
+                                            {
+                                                "type": "text",
+                                                "text": "抽到特獎",
+                                                "size": "sm",
+                                                "color": "#444444"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "footer": {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "contents": [
+                            {
+                                "type": "button",
+                                "action": {
+                                    "type": "uri",
+                                    "label": "綁定會員即可擁有",
+                                    "uri": "https://linecorp.com"
+                                }
+                            }
+                        ]
+                    }
+                }
+            }]
+        }
+    }
+    var options = {
+        host: 'api.line.me',
+        port: '443',
+        path: '/v2/bot/message/push',
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json; charset=UTF-8',
+            'Content-Length': Buffer.byteLength(JSON.stringify(data)),
+            'Authorization': 'Bearer <' + config.channel_access_token + '>'
+        }
+    }
+    var https = require('https');
+    var req = https.request(options, function (res) {
+        res.setEncoding('utf8');
+        res.on('data', function (chunk) {
+            logger.info('Response: ' + chunk);
+        });
+    });
+    req.write(JSON.stringify(data));
+    req.end();
+    try {
+        callback(true);
+    } catch (e) { };
+}
+
 function SenduseridMessage(userId, message, password, reply_token, callback) {
     if (password == 'tstiisacompanyfortatung') {
         let data = {
@@ -221,7 +348,7 @@ function SendFlexMessage(userId, message, password, reply_token, callback) {
                 ]
             };
         }
-        else if(message != "測試測試"){
+        else if (message != "測試測試") {
             var data = {
                 'to': userId,
                 'messages': [
