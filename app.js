@@ -151,7 +151,7 @@ function SendGiftMessage(user, password) {
     console.log(user.userId);
     console.log(user.displayName);
     console.log(user.pictureUrl);
-    console.log(typeof(user));
+    console.log(JSON.stringify(user));
     var userId = JSON.stringify(user.userId);
     var pic = JSON.stringify(user.pictureUrl);
     if (password == 'tstiisacompanyfortatung') {
