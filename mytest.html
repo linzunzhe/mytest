@@ -51,7 +51,7 @@
             /*liff.init(function (){
                 $.post('/getlineuserid');
             }, function (err){console.log("error: " + err);})*/
-            liff.sendMessage([{
+            liff.sendMessages([{
                 "type": "flex",
                 "altText": "e同購會員綁定",
                 "contents": {
@@ -122,6 +122,7 @@
                 }//contents end
             }]
             ).catch (console.log("err"));
+            liff.closeWindow();
         }
     </script>
 </body>
