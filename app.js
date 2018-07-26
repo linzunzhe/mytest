@@ -42,7 +42,7 @@ app.get('/lifftest', function (request, response) {
     console.log('GET /lifftest');
     request.header("Content-Type", 'text/html');
     var fs = require('fs');
-    fs.readFile(__dirname + '/mytest.html', 'utf8', function (err, data) {
+    fs.readFile(__dirname + '/lifftest.html', 'utf8', function (err, data) {
         if (err) {
             res.send(err);
         }
