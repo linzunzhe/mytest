@@ -57,6 +57,12 @@ app.get('/logs', function (request, response) {
 
 app.post('/getlineuserid', function (request, response) {
     console.log('post /getlineuserid');
+    var userId = request.body.userId;
+    var displayName = request.body.displayName;
+    var pictureUrl = request.body.pictureUrl;
+    console.log(userId);
+    console.log(displayName);
+    console.log(pictureUrl);
     response.send('200');
     SendFlexMessage(acct, results[idx].message.text, 'tstiisacompanyfortatung', reply_token, function (ret) { });
 });
