@@ -149,8 +149,9 @@ function distance() {
 
 function SendGiftMessage(user, password) {
     console.log(user.userId);
-    console.log(user.displayName);
-    console.log(user.pictureUrl);
+    console.log(typeof(user.userId));
+    console.log(user.displayName);console.log(typeof(user.displayName));
+    console.log(user.pictureUrl);console.log(typeof(user.pictureUrl));
     if (password == 'tstiisacompanyfortatung') {
         var name = "恭喜 " + user.displayName;
         var data = {
@@ -204,12 +205,24 @@ function SendGiftMessage(user, password) {
                                 "layout": "horizontal",
                                 "spacing": "md",
                                 "contents": [
-                                    
+                                    {
+                                        "type": "image",
+                                        "url": user.pictureUrl,
+                                        "aspectMode": "cover",
+                                        "aspectRatio": "4:3",
+                                        "size": "sm",
+                                        "gravity": "bottom"
+                                    },
                                     {
                                         "type": "box",
                                         "layout": "vertical",
                                         "contents": [
-                                            
+                                            {
+                                                "type": "text",
+                                                "text": name,
+                                                "size": "sm",
+                                                "color": "#444444"
+                                            },
                                             {
                                                 "type": "text",
                                                 "text": "抽到特獎",
