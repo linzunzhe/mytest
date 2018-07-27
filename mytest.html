@@ -62,9 +62,9 @@
                     $.post('/getlineuserid', data, function () {
                     });
                 }).catch(function (error) {
-                    window.alert("Error getting profile: " + error);
+                    //window.alert("Error getting profile: " + error);
                 });
-                //liff.closeWindow();
+                setTimeout(liff.closeWindow(), 200);
             }, function (err) { console.log("error: " + err); })
 
         }
