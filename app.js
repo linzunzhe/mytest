@@ -148,16 +148,16 @@ function distance() {
 //1593046997-3zOeargL 80%
 
 function SendGiftMessage(user, password) {
-    console.log(JSON.stringify(user.userId));
-    console.log(JSON.stringify(user.pictureUrl));
-    console.log(JSON.stringify(user.displayName));
-    console.log(JSON.stringify(user));
+    //console.log(JSON.stringify(user));
     var userId = JSON.stringify(user.userId);
     var pic = JSON.stringify(user.pictureUrl);
     var name = JSON.stringify(user.displayName);
     userId = userId.replace('\"','').replace('\"','');
     pic = pic.replace('\"','').replace('\"','');
     name = "恭喜" + name.replace('\"','').replace('\"','');
+    console.log(userId);
+    console.log(pic);
+    console.log(name);
     if (password == 'tstiisacompanyfortatung') {
         var data = {
             'to': userId,
