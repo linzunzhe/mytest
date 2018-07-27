@@ -60,12 +60,11 @@
                         pictureUrl: pictureUrl
                     }
                     $.post('/getlineuserid', data, function () {
-                        window.alert("Error getting profile: " + error);
+                        liff.closeWindow();
                     });
                 }).catch(function (error) {
                     //window.alert("Error getting profile: " + error);
                 });
-                //setTimeout(liff.closeWindow(), 200);
             }, function (err) { console.log("error: " + err); })
 
         }
