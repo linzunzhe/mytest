@@ -155,9 +155,9 @@ function SendGiftMessage(user, password) {
     userId = userId.replace('\"\\"','').replace('\\"\"','');
     pic = pic.replace('\"\\"','').replace('\\"\"','');
     name = "恭喜" + name.replace('\"\\"','').replace('\\"\"','');
-    console.log(userId);
-    console.log(pic);
-    console.log(name);
+    //console.log(userId);
+    //console.log(pic);
+    //console.log(name);
     if (password == 'tstiisacompanyfortatung') {
         var data = {
             'to': userId,
