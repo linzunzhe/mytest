@@ -148,9 +148,9 @@ function distance() {
 //1593046997-3zOeargL 80%
 
 function SendGiftMessage(user, password) {
-    console.log(user.userId);
-    console.log(user.displayName);
-    console.log(user.pictureUrl);
+    console.log(JSON.stringify(user.userId));
+    console.log(JSON.stringify(user.pictureUrl));
+    console.log(JSON.stringify(user.displayName));
     console.log(JSON.stringify(user));
     var userId = JSON.stringify(user.userId);
     var pic = JSON.stringify(user.pictureUrl);
