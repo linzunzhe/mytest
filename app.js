@@ -154,10 +154,13 @@ function SendGiftMessage(user, password) {
     console.log(JSON.stringify(user));
     var userId = JSON.stringify(user.userId);
     var pic = JSON.stringify(user.pictureUrl);
+    var name = JSON.stringify(user.displayName);
+    userId = userId.replace('\"','').replace('\"','');
+    pic = pic.replace('\"','').replace('\"','');
+    name = "恭喜" + name.replace('\"','').replace('\"','');
     if (password == 'tstiisacompanyfortatung') {
-        var name = "恭喜 " + JSON.stringify(user.displayName);
         var data = {
-            'to': JSON.stringify(user.userId),
+            'to': userId,
             'messages': [{
                 "type": "flex",
                 "altText": "e同購會員綁定",
@@ -209,7 +212,7 @@ function SendGiftMessage(user, password) {
                                 "contents": [
                                     {
                                         "type": "image",
-                                        "url": JSON.stringify(user.pictureUrl),
+                                        "url": pic,
                                         "aspectMode": "cover",
                                         "aspectRatio": "4:3",
                                         "size": "sm",
