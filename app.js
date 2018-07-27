@@ -184,7 +184,7 @@ function SendGiftMessage(user, password) {
                         "url": "https://www.etungo.com.tw/files/TC_PSpec/PS_Pic/TAW-A150Ls.jpg",
                         "size": "full",
                         "aspectRatio": "20:13",
-                        "aspectMode": "cover",
+                        "aspectMode": "fit",
                         "action": {
                             "type": "uri",
                             "uri": "https://www.etungo.com.tw/inside/377/722/728/60127.html"
@@ -201,7 +201,7 @@ function SendGiftMessage(user, password) {
                         "contents": [
                             {
                                 "type": "text",
-                                "text": "TATUNG大同 15KG定頻洗衣機 (TAW-A150L)",
+                                "text": "大同15KG定頻洗衣機",
                                 "size": "xl",
                                 "weight": "bold"
                             },
