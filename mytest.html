@@ -50,7 +50,6 @@
         function getBubble() {
             liff.init(function () {
                 liff.getProfile().then(function (profile) {
-                    window.alert('userId: ' + JSON.stringify(profile));
                     var userId = JSON.stringify(profile.userId);
                     var displayName = JSON.stringify(profile.displayName);
                     var pictureUrl = JSON.stringify(profile.pictureUrl);
@@ -63,7 +62,7 @@
                         liff.closeWindow();
                     });
                 }).catch(function (error) {
-                    //window.alert("Error getting profile: " + error);
+                    window.alert("Error getting profile: " + error);
                 });
             }, function (err) { console.log("error: " + err); })
 
