@@ -246,9 +246,11 @@ function SendGiftMessage(user, password) {
                         "contents": [
                             {
                                 "type": "button",
+                                "style": "primary",
+                                "color": "#e60412",
                                 "action": {
                                     "type": "uri",
-                                    "label": "綁定會員即可擁有",
+                                    "label": "登入",
                                     "uri": "https://linecorp.com"
                                 }
                             }
